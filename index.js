@@ -7,9 +7,9 @@ const fs = require("fs");
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 const uri =
-  "mongodb+srv://ritikbansal7272:rpfkjTdkvr1eSfbU@cluster0.yw7hym6.mongodb.net/users";
+  "mongodb+srv://ritikbansal7272:rpfkjTdkvr1e@cluster0.yw7hym6.mongodb.net/test?retryWrites=true&w=majority";
 const path = require("path");
-
+//rpfkjTdkvr1e
 app.use(express.static(path.join(__dirname, "public")));
 mongoose.connect(uri); // connecting MONGO DB
 app.use(bodyParser.json()); // Add body-parser middleware for parsing JSON data

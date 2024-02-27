@@ -7,7 +7,7 @@ const fs = require("fs");
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 const uri =
-  "mongodb+srv://ritikbansal7272:rpfkjTdkvr1eSfbU@cluster0.yw7hym6.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://ritikbansal7272:rpfkjTdkvr1eSfbU@cluster0.yw7hym6.mongodb.net/users";
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, "public")));

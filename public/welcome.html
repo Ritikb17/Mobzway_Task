@@ -9,12 +9,12 @@
 <body>
     <div id="one">
         Data has been enterd successfully 
-        <button onclick="gotohomepage()"></button>
+        <button onclick="gotohomepage(event)">GOTO HOME PAGE </button>
     </div>
     <script>
-        function gotohomepage()
-        {
-            window.open("http//localhost:3000/")
+        function gotohomepage(event)
+        {event.preventDefault();
+            window.open("http://localhost:3000/")
         }
     </script>
 </body>

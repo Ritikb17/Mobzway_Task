@@ -17,6 +17,8 @@
         <input type="password" id="password" name="password" required><br><br>
 
         <button type="submit">Login</button>
+        <button type="submit" onclick="gotohomepage()">HOME PAGE</button>
+
     </form>
 </div>
     <div id="response">
@@ -51,6 +53,15 @@
                 console.error("Error:", error);
             });
         });
+
     </script>
+
+
+<script>
+    function gotohomepage()
+    {
+        window.open("http://localhost:3000/")
+    }
+</script>
 </body>
 </html>

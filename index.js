@@ -52,6 +52,19 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/welcome-page", (req, res) => {
+  const filePath = path.join(__dirname, "./public/welcome.html");
+
+  // Read the HTML file and send it as the response
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.status(500).send("Internal Server Error");
+    } else {
+      res.status(200).type("text/html").send(data);
+    }
+  });
+});
+
 // SIGN UP PAGE GET
 app.get("/sign-up", (req, res) => {
   const filePath = path.join(__dirname, "./public/sign-up.html");

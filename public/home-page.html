@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="cs2.css">   
+</head>
+<body>
+    <div id="one"> 
+    WELCOME TO THE SERVER HOME PAGE <br>
+
+    <button onclick="gotosignup()">Sign-up</button>
+    <button onclick="gotologin()">Login-up</button>
+    
+    </div>
+    <script>
+        function gotosignup()
+        {
+            window.open("http://localhost:3000/sign-up")
+        }
+
+        function gotologin()
+        {
+            window.open("http://localhost:3000/login-page")
+        }
+    </script>
+</body>
+
+</html>

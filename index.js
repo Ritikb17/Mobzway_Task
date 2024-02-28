@@ -20,7 +20,7 @@ app.set("views", path.resolve("./views"));
 
 app.use(bodyParser.json()); // Add body-parser middleware for parsing JSON data
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
-
+let global_data = {};
 //DEFINEING SCHEMA
 const UserSchema = new mongoose.Schema({
   FIRST_NAME: String,
@@ -136,9 +136,10 @@ app.post("/login-page", (req, res) => {
       } else {
         const user = users.find((user) => user.PASSWORD === data.password);
         if (user) {
-          console.log("Valid password");
+          console.log("Valid USER");
           console.log(user);
-          res.status(200).json(user);
+          global_data = user;
+          res.json({ success: true });
         } else {
           console.log("Invalid password");
           res.status(401).json({ error: "Invalid password" });
@@ -151,4 +152,8 @@ app.post("/login-page", (req, res) => {
     });
 });
 
+app.get("/show-info", (req, res) => {
+  console.log("this is info function", global_data);
+  res.render("output", { global_data });
+});
 app.listen(PORT, () => console.log("Server is started", PORT));
